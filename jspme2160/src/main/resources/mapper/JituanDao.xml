@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JituanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JituanEntity" id="jituanMap">
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="mima" column="mima"/>
+        <result property="jituanming" column="jituanming"/>
+        <result property="jituandizhi" column="jituandizhi"/>
+        <result property="fadingdaibiaoren" column="fadingdaibiaoren"/>
+        <result property="zhuceziben" column="zhuceziben"/>
+        <result property="jituanyouxiang" column="jituanyouxiang"/>
+        <result property="guanwang" column="guanwang"/>
+        <result property="shehuitongyidaima" column="shehuitongyidaima"/>
+        <result property="jituandianhua" column="jituandianhua"/>
+        <result property="chengliriqi" column="chengliriqi"/>
+        <result property="touziren" column="touziren"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JituanVO" >
+		SELECT * FROM jituan  jituan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JituanVO" >
+		SELECT  jituan.* FROM jituan  jituan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JituanView" >
+
+		SELECT  jituan.* FROM jituan  jituan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JituanView" >
+		SELECT * FROM jituan  jituan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
